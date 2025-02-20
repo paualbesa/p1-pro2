@@ -7,6 +7,7 @@ public class Allotjament {
     private int estadaMinimaBaixa;
     private boolean temporadadAlta;
 
+
     public Allotjament(String id, String nom, int estadaMinimaAlta, int estadaMinimaBaixa, boolean temporadadAlta) {
         this.id = id;
         this.nom = nom;
@@ -20,11 +21,15 @@ public class Allotjament {
     }
 
     public String getId() {
+        return id;
     }
 
     public String getNom() {
+        return nom;
     }
 
-    public void setEstadaMinima(int i, int i1) {
+    public void setEstadaMinima(int alta, int baixa) {
+        estadaMinimaAlta = alta;
+        estadaMinimaBaixa = baixa;
     }
 }
