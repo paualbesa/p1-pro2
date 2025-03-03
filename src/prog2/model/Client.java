@@ -1,11 +1,19 @@
 package prog2.model;
 
+import prog2.vista.ExcepcioReserva;
+
 public class Client {
     String nom;
     String dni;
-    public Client(String nom, String dni) {
+
+    public Client(String nom, String dni) throws ExcepcioReserva {
         this.nom = nom;
-        this.dni = dni;
+        if(dni.length() != 9){
+            throw new ExcepcioReserva("DNI incorrecte");
+        }
+        else{
+            this.dni = dni;
+        }
     }
 
     public String getNom() {

@@ -18,6 +18,16 @@ public class Camping implements InCamping{
         this.llistaClients = new ArrayList<Client>();
     }
 
+    public static InAllotjament.Temp getTemporada(LocalDate date) {
+        int dayOfYear = date.getDayOfYear();
+        if ((dayOfYear >= LocalDate.of(date.getYear(), 9, 21).getDayOfYear() && dayOfYear <= LocalDate.of(date.getYear(), 12, 31).getDayOfYear()) ||
+                (dayOfYear >= LocalDate.of(date.getYear(), 1, 1).getDayOfYear() && dayOfYear <= LocalDate.of(date.getYear(), 3, 20).getDayOfYear())) {
+            return InAllotjament.Temp.ALTA;
+        } else {
+            return InAllotjament.Temp.BAIXA;
+        }
+    }
+
     @Override
     public String getNom() {
         return nom;

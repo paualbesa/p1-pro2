@@ -1,14 +1,14 @@
 package prog2.model;
 
 public abstract class Allotjament implements InAllotjament{
-    private String id;
     private String nom;
+    private String id;
     private long estadaMinimaAlta;
     private long estadaMinimaBaixa;
 
-    public Allotjament(String id, String nom, long estadaMinimaAlta, long estadaMinimaBaixa) {
-        this.id = id;
+    public Allotjament(String nom, String id, long estadaMinimaAlta, long estadaMinimaBaixa) {
         this.nom = nom;
+        this.id = id;
         this.estadaMinimaAlta = estadaMinimaAlta;
         this.estadaMinimaBaixa = estadaMinimaBaixa;
     }

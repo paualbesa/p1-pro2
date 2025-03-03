@@ -5,8 +5,8 @@ public class Casa extends Allotjament{
     private int numHabitacions;
     private int numPlacesPersones;
 
-    public Casa(String nom, String id, String mida, int numHabitacions, int numPlacesPersones) {
-        super(nom, id);
+    public Casa(String nom, String id, String mida, int numHabitacions, int numPlacesPersones, long estadaMinimaAlta, long estadaMinimaBaixa) {
+        super(nom, id, estadaMinimaAlta, estadaMinimaBaixa);
         this.mida = mida;
         this.numHabitacions = numHabitacions;
         this.numPlacesPersones = numPlacesPersones;
