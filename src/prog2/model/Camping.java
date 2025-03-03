@@ -20,7 +20,7 @@ public class Camping implements InCamping{
 
     @Override
     public String getNom() {
-        return "";
+        return nom;
     }
 
     @Override

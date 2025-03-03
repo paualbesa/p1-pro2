@@ -1,5 +1,5 @@
 package prog2.model;
 
-public class MobilHome extends Allotjament{
+public class MobilHome extends Casa{
 
 }
