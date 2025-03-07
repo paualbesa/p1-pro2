@@ -7,7 +7,8 @@ public class Parcela extends Allotjament{
     private static final long ESTADA_MINIMA_BAIXA = 2;
 
     public Parcela(String nom, String id, float mida, boolean connexioElectrica) {
-        super(nom, id, ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
+        super(nom, id);
+        super.setEstadaMinima(ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
         this.mida = mida;
         this.connexioElectrica = connexioElectrica;
     }
@@ -35,6 +36,7 @@ public class Parcela extends Allotjament{
 
     @Override
     public String toString() {
-        return "Parcela{" + "mida=" + mida + ", connexioElectrica=" + connexioElectrica + '}';
+        return "Nom= " + super.getNom() + ", Id= " + super.getId() + ", estada mínima en temp ALTA: " + ESTADA_MINIMA_ALTA + ", estada mínima en temp BAIXA: " +
+                ESTADA_MINIMA_BAIXA + ", Parcel·la{ mida en metres quedrats= " + getMida() + ", punt de connexió elèctrica= " + isConnexioElectrica() + " }";
     }
 }

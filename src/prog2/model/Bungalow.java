@@ -8,20 +8,13 @@ public class Bungalow extends Casa {
     private static final long ESTADA_MINIMA_ALTA = 7;
     private static final long ESTADA_MINIMA_BAIXA = 4;
 
-    public Bungalow(String nom, String id, String mida, int numHabitacions, int numPlacesPersones, int numPlacesParquing, boolean isTerrassa, boolean isTV, boolean isAireFred) {
-        super(nom, id, mida, numHabitacions, numPlacesPersones, ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
+    public Bungalow(String nom, String id, Mides mida, int numHabitacions, int numPlacesPersones, int numPlacesParquing, boolean isTerrassa, boolean isTV, boolean isAireFred) {
+        super(nom, id, mida, numHabitacions, numPlacesPersones);
+        super.setEstadaMinima(ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
         this.numPlacesParquing = numPlacesParquing;
         this.isTerrassa = isTerrassa();
         this.isTV = isTV;
         this.isAireFred = isAireFred;
-    }
-
-    public int getHabitacions() {
-        return super.getHabitacions();
-    }
-
-    public int getPlacesPersones() {
-        return super.getPlacesPersones();
     }
 
     public int getPlacesParquing() {
@@ -64,6 +57,9 @@ public class Bungalow extends Casa {
 
     @Override
     public String toString() {
-        return "Bungalow{" + "numPlacesParquing=" + numPlacesParquing + ", isTerrassa=" + isTerrassa + ", isTV=" + isTV + ", isAireFred=" + isAireFred + '}';
+        return "Nom= " + super.getNom() + ", Id= " + super.getId() + ", estada mínima en temp ALTA: " + ESTADA_MINIMA_ALTA + ", estada mínima en temp BAIXA: " +
+                ESTADA_MINIMA_BAIXA + ", Bungalow{ pàrquing amb places= " + numPlacesParquing + ", amb aire fred= " + isAireFred + ", amb terrassa= " + isTerrassa +
+                ", amb televisió= " + isTV + " }";
     }
+
 }

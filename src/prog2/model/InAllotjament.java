@@ -38,7 +38,10 @@ public interface InAllotjament {
      */
     long getEstadaMinima(Temp temp);
 
-    /**
+    /**    @Override
+    public String toString() {
+        return "BungalowPremium{" + "serveisExtra=" + serveisExtra + ", codiWifi=" + codiWifi + '}';
+    }
      * Estableix l'estada mínima per a cada temporada.
      * @param estadaMinimaALTA_ l'estada mínima en temporada alta.
      * @param estadaMinimaBAIXA_ l'estada mínima en temporada baixa.

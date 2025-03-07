@@ -6,8 +6,9 @@ public class Glamping extends Casa{
     private static final long ESTADA_MINIMA_ALTA = 5;
     private static final long ESTADA_MINIMA_BAIXA = 3;
 
-    public Glamping(String nom, String id, String mida, int numHabitacions, int numPlacesPersones, String material, boolean casaMascota) {
-        super(nom, id, mida, numHabitacions, numPlacesPersones, ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
+    public Glamping(String nom, String id, Mides mida, int numHabitacions, int numPlacesPersones, String material, boolean casaMascota) {
+        super(nom, id, mida, numHabitacions, numPlacesPersones);
+        super.setEstadaMinima(ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
         this.material = material;
         this.casaMascota = casaMascota;
     }
@@ -35,6 +36,7 @@ public class Glamping extends Casa{
 
     @Override
     public String toString() {
-        return "Glamping{" + "material=" + material + ", casaMascota=" + casaMascota + '}';
+        return "Nom= " + super.getNom() + ", Id= " + super.getId() + ", estada mínima en temp ALTA: " + ESTADA_MINIMA_ALTA + ", estada mínima en temp BAIXA: " +
+                ESTADA_MINIMA_BAIXA + ", Glamping{ material= " + getMaterial() + ", casa per mascotes=" + isCasaMascota()+ " }";
     }
 }
