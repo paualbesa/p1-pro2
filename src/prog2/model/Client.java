@@ -42,4 +42,11 @@ public class Client {
             this.dni = dni;
         }
     }
+
+    public String toString() {
+        return "Client{" +
+                "nom='" + nom + '\'' +
+                ", dni='" + dni + '\'' +
+                '}';
+    }
 }
