@@ -17,6 +17,7 @@ public class Glamping extends Casa{
         return material;
     }
 
+    //getter de casaMascota:
     public boolean isCasaMascota() {
         return casaMascota;
     }

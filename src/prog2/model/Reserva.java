@@ -1,5 +1,6 @@
 package prog2.model;
 
+//importem una classe de l'API de JAava: LocalDate
 import java.time.LocalDate;
 
 public class Reserva {

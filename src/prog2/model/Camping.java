@@ -18,10 +18,12 @@ public class Camping implements InCamping{
         this.llistaClients = new ArrayList<Client>();
     }
 
+    //the following function returns one of the two values from the enum defined at the InAllotjament interface: ALTA or BAIXA.
+    //only the month and the day are constants to change the season: day/month -> 21/09 to 31/12
     public static InAllotjament.Temp getTemporada(LocalDate date) {
         int dayOfYear = date.getDayOfYear();
-        if ((dayOfYear >= LocalDate.of(date.getYear(), 9, 21).getDayOfYear() && dayOfYear <= LocalDate.of(date.getYear(), 12, 31).getDayOfYear()) ||
-                (dayOfYear >= LocalDate.of(date.getYear(), 1, 1).getDayOfYear() && dayOfYear <= LocalDate.of(date.getYear(), 3, 20).getDayOfYear())) {
+
+        if (dayOfYear >= LocalDate.of(date.getYear(), 3, 21).getDayOfYear() && dayOfYear <= LocalDate.of(date.getYear(), 9, 20).getDayOfYear() ){
             return InAllotjament.Temp.ALTA;
         } else {
             return InAllotjament.Temp.BAIXA;
