@@ -1,7 +1,11 @@
 
 package prog2.vista;
 
+import prog2.model.Allotjament;
 import prog2.model.Camping;
+import prog2.model.Parcela;
+
+import java.time.LocalDate;
 
 
 /**
@@ -27,20 +31,36 @@ public class GestorCamping {
         // >> La mida total de les parcel·les del Càmping del Mar és de X m^2)
         //--------------------------------------------------------------------------------------------------------------------
         // Per completar
-
-
+        float midaTotal = 0.0f;
+        for (Allotjament allotjament : campingMar.getLlistaAllotjaments()) {
+            if (allotjament instanceof Parcela) {
+                Parcela parcela = (Parcela) allotjament;
+                midaTotal += parcela.getMida();
+            }
+        }
+        System.out.println("La mida total de les parcel·les del Càmping del Mar és de " + midaTotal + " m^2");
 
 
         // Mostrar el número total d'allotjaments del Càmping i el número d'allotjaments que estan operatius amb el següent missatge:
         // >> El número total d'allotjaments del Càmping és X dels quals X allotjaments estan operatius.
         //--------------------------------------------------------------------------------------------------
         // Per completar
+        int totalAllotjaments = campingMar.getLlistaAllotjaments().size();
+        int allotjamentsOperatius = campingMar.calculAllotjamentsOperatius();
+
+        System.out.println("El número total d'allotjaments del Càmping és " + totalAllotjaments + " dels quals " + allotjamentsOperatius + " allotjaments estan operatius.");
 
         // Mostrar l'allotjament amb estada mínima de la temporada baixa més curta amb el següent missatge:
         // >> L'allotjament amb estada mínima de la temporada baixa més curta és el següent:
         //--------------------------------------------------------------------------------------------------
         // Per completar
-       
+        Allotjament allotjamentEstadaMesCurta = campingMar.getAllotjamentEstadaMesCurta();
+        if (allotjamentEstadaMesCurta != null) {
+            System.out.println("L'allotjament amb estada mínima de la temporada baixa més curta és el següent:");
+            System.out.println(allotjamentEstadaMesCurta);
+        } else {
+            System.out.println("No hi ha allotjaments disponibles.");
+        }
     }
     
     /**
@@ -189,42 +209,56 @@ public class GestorCamping {
      * @param camping
      */
     private static void ferReserves(Camping camping){
-        
-        // Per completar:
-        
+
         // 1. Afegeix una reserva pel client amb DNI "12345678X" de l'allotjament amb identificador "100P"
         // amb la data d'entrada 20 de Febrer del 2025 i data de sortida 28 de febrer del 2025.
 
         // Declarar les variables de tipus String idAllotjament i dni.
-        // Per completar
-
-        // Assigna els valors corresponents.
-        // Per completar
+        String idAllotjament = "100P";
+        String dni = "12345678X";
 
         // Crear una LocalDate per definir la data de la reserva.
-        // Per completar
+        LocalDate dataEntrada = LocalDate.of(2025, 2, 20);
+        LocalDate dataSortida = LocalDate.of(2025, 2, 28);
 
         // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
-        // Per completar
-        
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
         // 2. Afegeix una reserva pel client amb DNI "78659101A" de l'allotjament amb identificador "100P"
         // amb la data d'entrada 25 de Febrer del 2025 i data de sortida 28 de febrer del 2025.
 
         // Assigna els nous valors a les variables
-        // Per completar
+        idAllotjament = "100P";
+        dni = "78659101A";
+        dataEntrada = LocalDate.of(2025, 2, 25);
+        dataSortida = LocalDate.of(2025, 2, 28);
 
         // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
-        // Per completar
-           
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
+
         // 3. Afegeix una reserva pel client amb DNI "789101A" de l'allotjament amb identificador "300S"
         // amb la data d'entrada 25 de Febrer del 2025 i data de sortida 28 de febrer del 2025.
 
-        // Assigna els nous valors a les variables.    
-        // Per completar
+        // Assigna els nous valors a les variables.
+        idAllotjament = "300S";
+        dni = "789101A";
+        dataEntrada = LocalDate.of(2025, 2, 25);
+        dataSortida = LocalDate.of(2025, 2, 28);
 
         // Intentar afegir la reserva amb la informació indicada i si no és possible mostrar el missatge d'error.
-        // Per completar
-        
+        try {
+            camping.afegirReserva(idAllotjament, dni, dataEntrada, dataSortida);
+        } catch (ExcepcioReserva ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
 }
