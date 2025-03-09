@@ -7,15 +7,12 @@ public class Client {
     String dni; //ha de ternir 9 caràcters
 
     //el constructor rep els arguments en el mateix ordre que el mètode afegirClient de la classe Camping
-    public Client(String nom, String dni) {
-        try{
-            setDni(dni);
-        }
-        catch(ExcepcioReserva dniNonCorrect){
-            //we'll print the detailMessage attibute/field from the ExcepcioReserva class.
-            System.err.println(dniNonCorrect.getMessage());
+    public Client(String nom, String dni) throws ExcepcioReserva {
+        /*en cridar setDni() és possible que succeeixi una excepció. Tal i com està dit a la capçalera del constructor Client, aquesta excepció es delegarà a qui invoqui el
+        mètode, és a dir a qui instanciï un objecte de la classe Client.
+         */
+        setDni(dni);
 
-        }
         //more efficient in this way, using the keyword this, as there's no test to pass with the attribute nom.
         this.nom = nom;
     }

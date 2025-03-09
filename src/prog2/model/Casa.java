@@ -1,21 +1,15 @@
 package prog2.model;
 
-public class Casa extends Allotjament{
+public abstract class  Casa extends Allotjament{
 
-    public enum Mides{
-        PETITA,
-        MITJANA,
-        GRAN
-    }
-
-    private Mides mida;
+    private String mida; //ho podríem haver implementat com a un enum també, ja que només hi ha 3 possibles opcions.
     private int numHabitacions;
     private int numPlacesPersones;
 
     /* DEBO ASEGURARME DE QUE SE METE UNA DE LAS 3 OPCIONES POSIBLES, SINO LANZAR INTERRUPCIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOON !!!!!
     */
 
-    public Casa(String nom, String id, Mides mida, int numHabitacions, int numPlacesPersones){
+    public Casa(String nom, String id, String mida, int numHabitacions, int numPlacesPersones){
         super(nom, id);
         this.mida = mida;
         this.numHabitacions = numHabitacions;
@@ -27,7 +21,7 @@ public class Casa extends Allotjament{
     }
 
     public String getMida() {
-        return mida.name();
+        return mida;
     }
 
     public int getPlacesPersones() {

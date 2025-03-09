@@ -7,7 +7,7 @@ public class BungalowPremium extends Bungalow{
     private static final long ESTADA_MINIMA_ALTA = 7;
     private static final long ESTADA_MINIMA_BAIXA = 4;
 
-    public BungalowPremium(String nom, String id, Mides mida, int numHabitacions, int numPlacesPersones, int numPlacesParquing, boolean isTerrassa, boolean isTV, boolean isAireFred, boolean serveisExtra, String codiWifi) {
+    public BungalowPremium(String nom, String id, String mida, int numHabitacions, int numPlacesPersones, int numPlacesParquing, boolean isTerrassa, boolean isTV, boolean isAireFred, boolean serveisExtra, String codiWifi) {
         super(nom, id, mida, numHabitacions, numPlacesPersones, numPlacesParquing, isTerrassa, isTV, isAireFred);
         super.setEstadaMinima(ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
         this.serveisExtra = serveisExtra;
