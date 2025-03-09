@@ -12,7 +12,7 @@ public class Bungalow extends Casa {
         super(nom, id, mida, numHabitacions, numPlacesPersones);
         super.setEstadaMinima(ESTADA_MINIMA_ALTA, ESTADA_MINIMA_BAIXA);
         this.numPlacesParquing = numPlacesParquing;
-        this.isTerrassa = isTerrassa();
+        this.isTerrassa = isTerrassa;
         this.isTV = isTV;
         this.isAireFred = isAireFred;
     }

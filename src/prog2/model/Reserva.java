@@ -1,6 +1,8 @@
 package prog2.model;
 
 //importem una classe de l'API de JAava: LocalDate
+import prog2.vista.ExcepcioReserva;
+
 import java.time.LocalDate;
 
 public class Reserva {
@@ -9,7 +11,7 @@ public class Reserva {
     private LocalDate dataEntrada;
     private LocalDate dataSortida;
 
-    public Reserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) {
+    public Reserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         this.allotjament = allotjament;
         this.client = client;
         this.dataEntrada = dataEntrada;

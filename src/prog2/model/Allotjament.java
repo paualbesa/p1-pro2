@@ -6,9 +6,10 @@ public abstract class Allotjament implements InAllotjament{
     private long estadaMinimaAlta;
     private long estadaMinimaBaixa;
 
-    public Allotjament(String nom, String id){
+    public Allotjament(String nom, String id, long estadaMinimaAlta, long estadaMinimaBaixa) {
         setNom(nom);
         setId(id);
+        setEstadaMinima(estadaMinimaAlta, estadaMinimaBaixa);
     }
 
     public long getEstadaMinima(InAllotjament.Temp temp) {

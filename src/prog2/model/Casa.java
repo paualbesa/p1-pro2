@@ -10,7 +10,7 @@ public abstract class  Casa extends Allotjament{
     */
 
     public Casa(String nom, String id, String mida, int numHabitacions, int numPlacesPersones){
-        super(nom, id);
+        super(nom, id, 0,0);
         this.mida = mida;
         this.numHabitacions = numHabitacions;
         this.numPlacesPersones = numPlacesPersones;
