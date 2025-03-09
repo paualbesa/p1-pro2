@@ -60,4 +60,8 @@ public abstract class Allotjament implements InAllotjament{
         Allotjament accommodation = (Allotjament) o;
         return accommodation.getId().equals( this.getId() ); //esta invocación a equals es al de la clase String.
     }
+
+    public String toString() {
+        return "Nom=" + getNom() + ", Id=" + getId() + ", estada mínima en temp ALTA: " + estadaMinimaAlta + ", estada mínima en temp BAIXA: " + estadaMinimaBaixa + ".";
+    }
 }

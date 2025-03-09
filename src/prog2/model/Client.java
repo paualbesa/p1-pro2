@@ -35,7 +35,7 @@ public class Client {
         if(dni.length() != 9){
             //the following two following code lines could be abbreviated by: throw new ExcepcioReserva("DNI incorrecte");
             //as we're leaning we're doing it in a more legible way:
-            ExcepcioReserva dniWrong = new ExcepcioReserva("DNI incorrecte, la seva llargada no és de 9 caràcters");
+            ExcepcioReserva dniWrong = new ExcepcioReserva("El DNI ha de tenir 9 caràcters.");
             throw dniWrong;
         }
         else{

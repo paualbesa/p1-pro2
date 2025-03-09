@@ -14,8 +14,13 @@ public class Reserva {
     public Reserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva {
         this.allotjament = allotjament;
         this.client = client;
-        this.dataEntrada = dataEntrada;
-        this.dataSortida = dataSortida;
+        if(dataSortida.isBefore(dataEntrada)){
+            throw new ExcepcioReserva("La data de sortidad no pot ser abans de la data d'entrada");
+        }
+        else {
+            this.dataEntrada = dataEntrada;
+            this.dataSortida = dataSortida;
+        }
     }
 
     public Allotjament getAllotjament_() {

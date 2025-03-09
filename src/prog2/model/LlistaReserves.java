@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class LlistaReserves implements InLlistaReserves{
 
-    private ArrayList<Reserva> llistaReserves;
+    private ArrayList<Reserva> llistaReserves = new ArrayList<>();
 
 
     public void afegirReserva(Allotjament allotjament, Client client, LocalDate dataEntrada, LocalDate dataSortida) throws ExcepcioReserva{
@@ -66,7 +66,7 @@ public class LlistaReserves implements InLlistaReserves{
          */
         InAllotjament.Temp temporada = Camping.getTemporada(dataEntrada);
 
-        if (accommodation.getEstadaMinima(temporada) >= estada){
+        if (estada >= accommodation.getEstadaMinima(temporada)){
             return true;
         }
         else{

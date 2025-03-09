@@ -132,7 +132,7 @@ public class Camping implements InCamping{
         }
 
         //si no hem trobat el client que vol fer la reserva o l'allotjament on la vol fer:
-        if(ourClient == null || ourAllotj == null){
+        if(!clientFounded || !allotjFounded){
             throw new ExcepcioReserva("L'usuari o allotjament desitjat, no es troba a la nostra base de dades.");
         }
         //en cas que sí, procedim a intentar afegir la reserva:
